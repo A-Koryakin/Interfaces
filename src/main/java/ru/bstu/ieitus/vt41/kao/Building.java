@@ -13,12 +13,17 @@ public class Building extends Construction {
 
     public void init(Scanner scanner) {
         System.out.println("Инициализация объекта Здание");
+
         System.out.print("  Введите количество этажей: ");
         FloorsNumber = scanner.nextInt();
+
+        System.out.print("  Введите основной материал: ");
+        PrimaryMaterial = scanner.next();
     }
 
     @Override
     public String toString() {
-        return "Количество этажей: " + FloorsNumber;
+        return "Количество этажей: " + FloorsNumber + "\n" +
+                "Основной материал: " + PrimaryMaterial;
     }
 }
