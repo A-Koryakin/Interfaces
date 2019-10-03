@@ -17,13 +17,17 @@ public class Building extends Construction {
         System.out.print("  Введите количество этажей: ");
         FloorsNumber = scanner.nextInt();
 
+        System.out.print("  Введите срок эксплуатации: ");
+        ExplotiationPeriod = scanner.nextInt();
+
         System.out.print("  Введите основной материал: ");
         PrimaryMaterial = scanner.next();
     }
 
     @Override
     public String toString() {
-        return "Количество этажей: " + FloorsNumber + "\n" +
-                "Основной материал: " + PrimaryMaterial;
+        return "Свойства здания \n" +
+                "   Количество этажей: " + FloorsNumber + "\n" +
+                "   Основной материал: " + PrimaryMaterial;
     }
 }
