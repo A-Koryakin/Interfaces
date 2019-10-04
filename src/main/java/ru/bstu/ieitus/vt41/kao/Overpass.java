@@ -2,10 +2,10 @@ package ru.bstu.ieitus.vt41.kao;
 
 import java.util.Scanner;
 
-public class Overpass extends Construction{
+public class Overpass extends Construction {
     int Length;
 
-    public Overpass(Scanner scanner){
+    public Overpass(Scanner scanner) {
         init(scanner);
     }
 

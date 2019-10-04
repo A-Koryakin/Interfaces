@@ -2,7 +2,7 @@ package ru.bstu.ieitus.vt41.kao;
 
 import java.util.Scanner;
 
-public class PrivateHouse extends Building{
+public class PrivateHouse extends Building {
     int RoomsNumber;
     boolean HasGarage;
 
@@ -34,8 +34,8 @@ public class PrivateHouse extends Building{
     public String toString() {
         return "Свойства частного дома\n" +
                 "   Количество этажей: " + FloorsNumber + "\n" +
-                "   Основной материал: " + PrimaryMaterial+ "\n" +
-                "   Количество комнат: " + RoomsNumber+ "\n" +
+                "   Основной материал: " + PrimaryMaterial + "\n" +
+                "   Количество комнат: " + RoomsNumber + "\n" +
                 "   Наличие гаража: " + HasGarage;
     }
 }

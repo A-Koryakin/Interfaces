@@ -35,8 +35,8 @@ public class ApartmentHouse extends Building {
     public String toString() {
         return "Свойства многоквартирного дома\n" +
                 "   Количество этажей: " + FloorsNumber + "\n" +
-                "   Основной материал: " + PrimaryMaterial+ "\n" +
-                "   Количество квартир: " + ApartmentsNumber+ "\n" +
+                "   Основной материал: " + PrimaryMaterial + "\n" +
+                "   Количество квартир: " + ApartmentsNumber + "\n" +
                 "   Количество подъездов: " + PorchsNumber;
     }
 }

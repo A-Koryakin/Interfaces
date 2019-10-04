@@ -6,8 +6,7 @@ public class Building extends Construction {
 
     int FloorsNumber;
 
-    public Building(Scanner scanner)
-    {
+    public Building(Scanner scanner) {
         init(scanner);
     }
 

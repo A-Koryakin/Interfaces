@@ -2,7 +2,7 @@ package ru.bstu.ieitus.vt41.kao;
 
 import java.util.Scanner;
 
-public class Tunnel extends Overpass{
+public class Tunnel extends Overpass {
     int Depth;
 
     public Tunnel(Scanner scanner) {

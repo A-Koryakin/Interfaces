@@ -2,12 +2,11 @@ package ru.bstu.ieitus.vt41.kao;
 
 import java.util.Scanner;
 
-public class Supermarket extends Building{
+public class Supermarket extends Building {
     int NumberOfHalls;
     int NumberOfEntrances; //Количество входов
 
-    public Supermarket(Scanner scanner)
-    {
+    public Supermarket(Scanner scanner) {
         super(scanner);
     }
 
@@ -35,8 +34,8 @@ public class Supermarket extends Building{
     public String toString() {
         return "Свойства супермаркета\n" +
                 "   Количество этажей: " + FloorsNumber + "\n" +
-                "   Основной материал: " + PrimaryMaterial+ "\n" +
-                "   Количество торговых залов: " + NumberOfHalls+ "\n" +
+                "   Основной материал: " + PrimaryMaterial + "\n" +
+                "   Количество торговых залов: " + NumberOfHalls + "\n" +
                 "   Количество входов: " + NumberOfEntrances;
     }
 }
