@@ -5,20 +5,20 @@ import lombok.Data;
 import java.util.Scanner;
 
 public @Data class Tunnel extends Overpass {
-    int Depth;
+    int depth;
 
     @Override
     public void init(Scanner scanner) {
         super.init(scanner);
 
         System.out.print("  Введите глубину: ");
-        Depth = scanner.nextInt();
+        depth = scanner.nextInt();
     }
 
     @Override
     public String toString() {
         return "Тоннель: \n" +
                 super.toString() +
-                "   Глубина: " + Depth;
+                "   Глубина: " + depth;
     }
 }

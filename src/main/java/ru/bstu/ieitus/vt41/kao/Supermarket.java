@@ -5,25 +5,25 @@ import lombok.Data;
 import java.util.Scanner;
 
 public @Data class Supermarket extends Building {
-    int NumberOfHalls;
-    int NumberOfEntrances;
+    int numberOfHalls;
+    int numberOfEntrances;
 
     @Override
     public void init(Scanner scanner) {
         super.init(scanner);
 
         System.out.print("  Введите количество торговых залов: ");
-        NumberOfHalls = scanner.nextInt();
+        numberOfHalls = scanner.nextInt();
 
         System.out.print("  Введите количество входов: ");
-        NumberOfEntrances = scanner.nextInt();
+        numberOfEntrances = scanner.nextInt();
     }
 
     @Override
     public String toString() {
         return "Супермаркет:\n" +
                 super.toString() +
-                "   Количество торговых залов: " + NumberOfHalls + "\n" +
-                "   Количество входов: " + NumberOfEntrances;
+                "   Количество торговых залов: " + numberOfHalls + "\n" +
+                "   Количество входов: " + numberOfEntrances;
     }
 }

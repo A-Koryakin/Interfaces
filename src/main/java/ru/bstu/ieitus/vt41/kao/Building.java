@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Scanner;
 
 public @Data class Building extends Construction {
-    int FloorsNumber;
+    int floorsNumber;
 
     public Building() {
         Scanner scanner = new Scanner(System.in);
@@ -15,24 +15,24 @@ public @Data class Building extends Construction {
     public void init(Scanner scanner) {
 
         System.out.print("  Введите срок эксплуатации: ");
-        ExploitationPeriod = scanner.nextInt();
+        exploitationPeriod = scanner.nextInt();
 
         System.out.print("  Введите количество этажей: ");
-        FloorsNumber = scanner.nextInt();
+        floorsNumber = scanner.nextInt();
 
         System.out.print("  Введите основной материал: ");
-        PrimaryMaterial = scanner.next();
+        primaryMaterial = scanner.next();
     }
 
     @Override
     public int getExploitationPeriod() {
-        return ExploitationPeriod;
+        return exploitationPeriod;
     }
 
     @Override
     public String toString() {
-        return  "   Срок эксплуатации: " + ExploitationPeriod + "\n" +
-                "   Количество этажей: " + FloorsNumber + "\n" +
-                "   Основной материал: " + PrimaryMaterial + "\n";
+        return  "   Срок эксплуатации: " + exploitationPeriod + "\n" +
+                "   Количество этажей: " + floorsNumber + "\n" +
+                "   Основной материал: " + primaryMaterial + "\n";
     }
 }

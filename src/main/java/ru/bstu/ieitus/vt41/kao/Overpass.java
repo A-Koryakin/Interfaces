@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Scanner;
 
 public @Data class Overpass extends Construction {
-    int Length;
+    int length;
 
     public Overpass() {
         Scanner scanner = new Scanner(System.in);
@@ -15,24 +15,24 @@ public @Data class Overpass extends Construction {
     @Override
     public void init(Scanner scanner) {
         System.out.print("  Введите срок эксплуатации: ");
-        ExploitationPeriod = scanner.nextInt();
+        exploitationPeriod = scanner.nextInt();
 
         System.out.print("  Введите протяжённость: ");
-        Length = scanner.nextInt();
+        length = scanner.nextInt();
 
         System.out.print("  Введите основной материал: ");
-        PrimaryMaterial = scanner.next();
+        primaryMaterial = scanner.next();
     }
 
     @Override
     public int getExploitationPeriod() {
-        return ExploitationPeriod;
+        return exploitationPeriod;
     }
 
     @Override
     public String toString() {
-        return "   Срок эксплуатации: " + ExploitationPeriod + "\n" +
-                "   Протяжённость: " + Length + "\n" +
-                "   Основной материал: " + PrimaryMaterial + "\n";
+        return "   Срок эксплуатации: " + exploitationPeriod + "\n" +
+                "   Протяжённость: " + length + "\n" +
+                "   Основной материал: " + primaryMaterial + "\n";
     }
 }
