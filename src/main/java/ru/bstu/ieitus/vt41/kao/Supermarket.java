@@ -1,27 +1,16 @@
 package ru.bstu.ieitus.vt41.kao;
 
+import lombok.Data;
+
 import java.util.Scanner;
 
-public class Supermarket extends Building {
+public @Data class Supermarket extends Building {
     int NumberOfHalls;
-    int NumberOfEntrances; //Количество входов
-
-    public Supermarket(Scanner scanner) {
-        super(scanner);
-    }
+    int NumberOfEntrances;
 
     @Override
     public void init(Scanner scanner) {
-        System.out.println("Инициализация объекта Супермаркет");
-
-        System.out.print("  Введите срок эксплуатации: ");
-        ExplotiationPeriod = scanner.nextInt();
-
-        System.out.print("  Введите основной материал: ");
-        PrimaryMaterial = scanner.next();
-
-        System.out.print("  Введите количество этажей: ");
-        FloorsNumber = scanner.nextInt();
+        super.init(scanner);
 
         System.out.print("  Введите количество торговых залов: ");
         NumberOfHalls = scanner.nextInt();
@@ -32,9 +21,8 @@ public class Supermarket extends Building {
 
     @Override
     public String toString() {
-        return "Свойства супермаркета\n" +
-                "   Количество этажей: " + FloorsNumber + "\n" +
-                "   Основной материал: " + PrimaryMaterial + "\n" +
+        return "Супермаркет:\n" +
+                super.toString() +
                 "   Количество торговых залов: " + NumberOfHalls + "\n" +
                 "   Количество входов: " + NumberOfEntrances;
     }

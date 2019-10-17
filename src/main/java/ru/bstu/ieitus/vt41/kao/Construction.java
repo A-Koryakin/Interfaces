@@ -4,11 +4,9 @@ import java.util.Scanner;
 
 public abstract class Construction {
     String PrimaryMaterial;
-    int ExplotiationPeriod;
-
-    public int getExplotiationPeriod() {
-        return ExplotiationPeriod;
-    }
+    int ExploitationPeriod;
 
     public abstract void init(Scanner scanner);
+
+    public abstract int getExploitationPeriod();
 }

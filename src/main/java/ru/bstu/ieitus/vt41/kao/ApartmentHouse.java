@@ -1,42 +1,29 @@
 package ru.bstu.ieitus.vt41.kao;
 
+import lombok.Data;
+
 import java.util.Scanner;
 
-public class ApartmentHouse extends Building {
-
+public @Data class ApartmentHouse extends Building {
     int ApartmentsNumber;
-    int PorchsNumber;
-
-    public ApartmentHouse(Scanner scanner) {
-        super(scanner);
-    }
+    int PorchesNumber;
 
     @Override
     public void init(Scanner scanner) {
-        System.out.println("Инициализация объекта Многоквартирный дом");
-
-        System.out.print("  Введите срок эксплуатации: ");
-        ExplotiationPeriod = scanner.nextInt();
-
-        System.out.print("  Введите основной материал: ");
-        PrimaryMaterial = scanner.next();
-
-        System.out.print("  Введите количество этажей: ");
-        FloorsNumber = scanner.nextInt();
+        super.init(scanner);
 
         System.out.print("  Введите количество квартир: ");
         ApartmentsNumber = scanner.nextInt();
 
         System.out.print("  Введите количество подъездов: ");
-        PorchsNumber = scanner.nextInt();
+        PorchesNumber = scanner.nextInt();
     }
 
     @Override
     public String toString() {
-        return "Свойства многоквартирного дома\n" +
-                "   Количество этажей: " + FloorsNumber + "\n" +
-                "   Основной материал: " + PrimaryMaterial + "\n" +
+        return "Многоквартирный дом\n" +
+                super.toString() +
                 "   Количество квартир: " + ApartmentsNumber + "\n" +
-                "   Количество подъездов: " + PorchsNumber;
+                "   Количество подъездов: " + PorchesNumber;
     }
 }

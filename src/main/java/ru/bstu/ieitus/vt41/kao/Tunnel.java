@@ -1,26 +1,15 @@
 package ru.bstu.ieitus.vt41.kao;
 
+import lombok.Data;
+
 import java.util.Scanner;
 
-public class Tunnel extends Overpass {
+public @Data class Tunnel extends Overpass {
     int Depth;
-
-    public Tunnel(Scanner scanner) {
-        super(scanner);
-    }
 
     @Override
     public void init(Scanner scanner) {
-        System.out.println("Инициализация объекта Тоннель");
-
-        System.out.print("  Введите протяжённость: ");
-        Length = scanner.nextInt();
-
-        System.out.print("  Введите срок эксплуатации: ");
-        ExplotiationPeriod = scanner.nextInt();
-
-        System.out.print("  Введите основной материал: ");
-        PrimaryMaterial = scanner.next();
+        super.init(scanner);
 
         System.out.print("  Введите глубину: ");
         Depth = scanner.nextInt();
@@ -28,9 +17,8 @@ public class Tunnel extends Overpass {
 
     @Override
     public String toString() {
-        return "Свойства Тоннеля \n" +
-                "   Протяжённость: " + Length + "\n" +
-                "   Глубина: " + Depth + "\n" +
-                "   Основной материал: " + PrimaryMaterial;
+        return "Тоннель: \n" +
+                super.toString() +
+                "   Глубина: " + Depth;
     }
 }
