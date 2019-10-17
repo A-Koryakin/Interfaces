@@ -7,9 +7,9 @@ public class Lab1Tester {
         Construction construction = null;
         int min = 2000;
         for (Construction constr : constructions) {
-            if (constr.getExplotiationPeriod() < min) {
+            if (constr.getExploitationPeriod() < min) {
                 construction = constr;
-                min = constr.getExplotiationPeriod();
+                min = constr.getExploitationPeriod();
             }
         }
         return construction;
@@ -25,49 +25,57 @@ public class Lab1Tester {
 
         for (int i = 0; i < constrNum; i++) {
             int type;
-            System.out.print("Введите тип сооружения: ");
+            System.out.print("Введите тип сооружения: 1 - Здание, 2 - Супермаркет, 3 - Частный дом,\n" +
+                    "4 - Многоквартирный дом, 5 - Путепровод, 6 - Мост, 7 - Тоннель: ");
             type = scanner.nextInt();
 
             switch (type) {
 
                 case 1: {
-                    Building building = new Building(scanner);
+                    System.out.println("Здание:");
+                    Building building = new Building();
                     constructions[i] = building;
                     break;
                 }
 
                 case 2: {
-                    Supermarket supermarket = new Supermarket(scanner);
+                    System.out.println("Супермаркет:");
+                    Supermarket supermarket = new Supermarket();
                     constructions[i] = supermarket;
                     break;
                 }
 
                 case 3: {
-                    PrivateHouse privateHouse = new PrivateHouse(scanner);
+                    System.out.println("Частный дом:");
+                    PrivateHouse privateHouse = new PrivateHouse();
                     constructions[i] = privateHouse;
                     break;
                 }
 
                 case 4: {
-                    ApartmentHouse apartmentHouse = new ApartmentHouse(scanner);
+                    System.out.println("Многоквартирный дом:");
+                    ApartmentHouse apartmentHouse = new ApartmentHouse();
                     constructions[i] = apartmentHouse;
                     break;
                 }
 
                 case 5: {
-                    Overpass overpass = new Overpass(scanner);
+                    System.out.println("Путепровод:");
+                    Overpass overpass = new Overpass();
                     constructions[i] = overpass;
                     break;
                 }
 
                 case 6: {
-                    Bridge bridge = new Bridge(scanner);
+                    System.out.println("Мост:");
+                    Bridge bridge = new Bridge();
                     constructions[i] = bridge;
                     break;
                 }
 
                 case 7: {
-                    Tunnel tunnel = new Tunnel(scanner);
+                    System.out.println("Тоннель:");
+                    Tunnel tunnel = new Tunnel();
                     constructions[i] = tunnel;
                     break;
                 }
