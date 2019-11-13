@@ -13,6 +13,8 @@ public class App {
 
         ArrayList<Construction> constructions = new ArrayList<>();
 
+        //TODO: Вынести создание объектов в фабричный метод
+
         for (int i = 0; i < constrNum; i++) {
             int type;
             System.out.print("Введите тип сооружения: 1 - Здание, 2 - Супермаркет, 3 - Частный дом,\n" +
