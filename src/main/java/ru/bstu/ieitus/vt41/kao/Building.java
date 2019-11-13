@@ -38,4 +38,9 @@ public class Building extends Construction {
                 "   Количество этажей: " + mFloorsNumber + "\n" +
                 "   Основной материал: " + mPrimaryMaterial + "\n";
     }
+
+    @Override
+    public int compareTo(Construction o) {
+        return this.mExploitationPeriod.compareTo(o.mExploitationPeriod);
+    }
 }

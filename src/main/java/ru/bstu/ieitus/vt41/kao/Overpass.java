@@ -38,4 +38,9 @@ public class Overpass extends Construction {
                 "   Протяжённость: " + mLength + "\n" +
                 "   Основной материал: " + mPrimaryMaterial + "\n";
     }
+
+    @Override
+    public int compareTo(Construction o) {
+         return this.mExploitationPeriod.compareTo(o.mExploitationPeriod);
+    }
 }

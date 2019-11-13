@@ -2,7 +2,7 @@ package ru.bstu.ieitus.vt41.kao;
 
 import java.util.Scanner;
 
-public abstract class Construction {
+public abstract class Construction implements Comparable<Construction> {
     protected String mPrimaryMaterial;
     protected Integer mExploitationPeriod;
 

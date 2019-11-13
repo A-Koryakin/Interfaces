@@ -1,27 +1,17 @@
 import ru.bstu.ieitus.vt41.kao.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
-public class Lab1Tester {
-    public static Construction getMin(Construction[] constructions) {
-        Construction construction = null;
-        int min = 2000;
-        for (Construction constr : constructions) {
-            if (constr.getExploitationPeriod() < min) {
-                construction = constr;
-                min = constr.getExploitationPeriod();
-            }
-        }
-        return construction;
-    }
-
+public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int constrNum;
         System.out.print("Введите количество сооружений: ");
         constrNum = scanner.nextInt();
 
-        Construction[] constructions = new Construction[constrNum];
+        ArrayList<Construction> constructions = new ArrayList<>();
 
         for (int i = 0; i < constrNum; i++) {
             int type;
@@ -30,53 +20,52 @@ public class Lab1Tester {
             type = scanner.nextInt();
 
             switch (type) {
-
                 case 1: {
                     System.out.println("Здание:");
                     Building building = new Building();
-                    constructions[i] = building;
+                    constructions.add(building);
                     break;
                 }
 
                 case 2: {
                     System.out.println("Супермаркет:");
                     Supermarket supermarket = new Supermarket();
-                    constructions[i] = supermarket;
+                    constructions.add(supermarket);
                     break;
                 }
 
                 case 3: {
                     System.out.println("Частный дом:");
                     PrivateHouse privateHouse = new PrivateHouse();
-                    constructions[i] = privateHouse;
+                    constructions.add(privateHouse);
                     break;
                 }
 
                 case 4: {
                     System.out.println("Многоквартирный дом:");
                     ApartmentHouse apartmentHouse = new ApartmentHouse();
-                    constructions[i] = apartmentHouse;
+                    constructions.add(apartmentHouse);
                     break;
                 }
 
                 case 5: {
                     System.out.println("Путепровод:");
                     Overpass overpass = new Overpass();
-                    constructions[i] = overpass;
+                    constructions.add(overpass);
                     break;
                 }
 
                 case 6: {
                     System.out.println("Мост:");
                     Bridge bridge = new Bridge();
-                    constructions[i] = bridge;
+                    constructions.add(bridge);
                     break;
                 }
 
                 case 7: {
                     System.out.println("Тоннель:");
                     Tunnel tunnel = new Tunnel();
-                    constructions[i] = tunnel;
+                    constructions.add(tunnel);
                     break;
                 }
                 default: {
@@ -87,9 +76,9 @@ public class Lab1Tester {
             }
         }
 
-        String minExp = getMin(constructions).toString();
+        /*String minExp = getMin(constructions).toString();*/
 
         System.out.println("Сооружение с минимальным сроком эксплуатации:");
-        System.out.println(minExp);
+        System.out.println(Collections.min(constructions));
     }
 }
