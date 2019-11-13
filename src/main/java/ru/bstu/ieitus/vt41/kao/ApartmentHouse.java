@@ -1,29 +1,32 @@
 package ru.bstu.ieitus.vt41.kao;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Scanner;
 
-public @Data class ApartmentHouse extends Building {
-    int apartmentsNumber;
-    int porchesNumber;
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class ApartmentHouse extends Building {
+    protected Integer mApartmentsNumber;
+    protected Integer mPorchesNumber;
 
     @Override
     public void init(Scanner scanner) {
         super.init(scanner);
 
         System.out.print("  Введите количество квартир: ");
-        apartmentsNumber = scanner.nextInt();
+        mApartmentsNumber = scanner.nextInt();
 
         System.out.print("  Введите количество подъездов: ");
-        porchesNumber = scanner.nextInt();
+        mPorchesNumber = scanner.nextInt();
     }
 
     @Override
     public String toString() {
         return "Многоквартирный дом\n" +
                 super.toString() +
-                "   Количество квартир: " + apartmentsNumber + "\n" +
-                "   Количество подъездов: " + porchesNumber;
+                "   Количество квартир: " + mApartmentsNumber + "\n" +
+                "   Количество подъездов: " + mPorchesNumber;
     }
 }

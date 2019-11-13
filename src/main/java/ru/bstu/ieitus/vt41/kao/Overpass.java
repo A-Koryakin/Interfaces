@@ -1,11 +1,14 @@
 package ru.bstu.ieitus.vt41.kao;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Scanner;
 
-public @Data class Overpass extends Construction {
-    int length;
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class Overpass extends Construction {
+    protected Integer mLength;
 
     public Overpass() {
         Scanner scanner = new Scanner(System.in);
@@ -15,24 +18,24 @@ public @Data class Overpass extends Construction {
     @Override
     public void init(Scanner scanner) {
         System.out.print("  Введите срок эксплуатации: ");
-        exploitationPeriod = scanner.nextInt();
+        mExploitationPeriod = scanner.nextInt();
 
         System.out.print("  Введите протяжённость: ");
-        length = scanner.nextInt();
+        mLength = scanner.nextInt();
 
         System.out.print("  Введите основной материал: ");
-        primaryMaterial = scanner.next();
+        mPrimaryMaterial = scanner.next();
     }
 
     @Override
     public int getExploitationPeriod() {
-        return exploitationPeriod;
+        return mExploitationPeriod;
     }
 
     @Override
     public String toString() {
-        return "   Срок эксплуатации: " + exploitationPeriod + "\n" +
-                "   Протяжённость: " + length + "\n" +
-                "   Основной материал: " + primaryMaterial + "\n";
+        return "   Срок эксплуатации: " + mExploitationPeriod + "\n" +
+                "   Протяжённость: " + mLength + "\n" +
+                "   Основной материал: " + mPrimaryMaterial + "\n";
     }
 }

@@ -1,11 +1,14 @@
 package ru.bstu.ieitus.vt41.kao;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Scanner;
 
-public @Data class Building extends Construction {
-    int floorsNumber;
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class Building extends Construction {
+    protected Integer mFloorsNumber;
 
     public Building() {
         Scanner scanner = new Scanner(System.in);
@@ -15,24 +18,24 @@ public @Data class Building extends Construction {
     public void init(Scanner scanner) {
 
         System.out.print("  Введите срок эксплуатации: ");
-        exploitationPeriod = scanner.nextInt();
+        mExploitationPeriod = scanner.nextInt();
 
         System.out.print("  Введите количество этажей: ");
-        floorsNumber = scanner.nextInt();
+        mFloorsNumber = scanner.nextInt();
 
         System.out.print("  Введите основной материал: ");
-        primaryMaterial = scanner.next();
+        mPrimaryMaterial = scanner.next();
     }
 
     @Override
     public int getExploitationPeriod() {
-        return exploitationPeriod;
+        return mExploitationPeriod;
     }
 
     @Override
     public String toString() {
-        return  "   Срок эксплуатации: " + exploitationPeriod + "\n" +
-                "   Количество этажей: " + floorsNumber + "\n" +
-                "   Основной материал: " + primaryMaterial + "\n";
+        return  "   Срок эксплуатации: " + mExploitationPeriod + "\n" +
+                "   Количество этажей: " + mFloorsNumber + "\n" +
+                "   Основной материал: " + mPrimaryMaterial + "\n";
     }
 }

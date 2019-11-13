@@ -1,29 +1,32 @@
 package ru.bstu.ieitus.vt41.kao;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Scanner;
 
-public @Data class Supermarket extends Building {
-    int numberOfHalls;
-    int numberOfEntrances;
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class Supermarket extends Building {
+    protected Integer mNumberOfHalls;
+    protected Integer mNumberOfEntrances;
 
     @Override
     public void init(Scanner scanner) {
         super.init(scanner);
 
         System.out.print("  Введите количество торговых залов: ");
-        numberOfHalls = scanner.nextInt();
+        mNumberOfHalls = scanner.nextInt();
 
         System.out.print("  Введите количество входов: ");
-        numberOfEntrances = scanner.nextInt();
+        mNumberOfEntrances = scanner.nextInt();
     }
 
     @Override
     public String toString() {
         return "Супермаркет:\n" +
                 super.toString() +
-                "   Количество торговых залов: " + numberOfHalls + "\n" +
-                "   Количество входов: " + numberOfEntrances;
+                "   Количество торговых залов: " + mNumberOfHalls + "\n" +
+                "   Количество входов: " + mNumberOfEntrances;
     }
 }
