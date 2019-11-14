@@ -1,6 +1,7 @@
 package ru.bstu.ieitus.vt41.kao.enums;
 
 import lombok.Getter;
+import ru.bstu.ieitus.vt41.kao.exceptions.IllegalConstructionTypeNumber;
 import ru.bstu.ieitus.vt41.kao.model.*;
 
 public enum ConstructionType {
@@ -55,7 +56,7 @@ public enum ConstructionType {
                 return constructionType;
             }
         }
-        return null;
+        throw new IllegalConstructionTypeNumber();
     }
 
     @Override
