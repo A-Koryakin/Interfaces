@@ -1,4 +1,4 @@
-package ru.bstu.ieitus.vt41.kao;
+package ru.bstu.ieitus.vt41.kao.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -7,21 +7,21 @@ import java.util.Scanner;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class Bridge extends Overpass {
-    protected Integer mHeight;
+public class Tunnel extends Overpass {
+    protected Integer mDepth;
 
     @Override
     public void init(Scanner scanner) {
         super.init(scanner);
 
-        System.out.print("  Введите высоту: ");
-        mHeight = scanner.nextInt();
+        System.out.print("  Введите глубину: ");
+        mDepth = scanner.nextInt();
     }
 
     @Override
     public String toString() {
-        return "Мост: \n" +
+        return "Тоннель: \n" +
                 super.toString() +
-                "   Высота: " + mHeight + "\n";
+                "   Глубина: " + mDepth;
     }
 }

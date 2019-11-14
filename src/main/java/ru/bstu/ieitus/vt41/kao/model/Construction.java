@@ -1,4 +1,4 @@
-package ru.bstu.ieitus.vt41.kao;
+package ru.bstu.ieitus.vt41.kao.model;
 
 import java.util.Scanner;
 

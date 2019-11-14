@@ -1,4 +1,4 @@
-import ru.bstu.ieitus.vt41.kao.*;
+import ru.bstu.ieitus.vt41.kao.model.Construction;
 
 import java.util.ArrayList;
 import java.util.Collections;
