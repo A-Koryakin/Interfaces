@@ -2,7 +2,9 @@ package ru.bstu.ieitus.vt41.kao.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import ru.bstu.ieitus.vt41.kao.utills.ScanningLoop;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 @EqualsAndHashCode(callSuper = true)
@@ -12,14 +14,29 @@ public class Supermarket extends Building {
     protected Integer mNumberOfEntrances;
 
     @Override
-    public void init(Scanner scanner) {
+    public void init(Scanner scanner) throws NullPointerException, NoSuchElementException, IllegalStateException{
+        if(scanner == null)
+        {
+            throw new NullPointerException("Scanner не был определён");
+        }
+
         super.init(scanner);
 
-        System.out.print("  Введите количество торговых залов: ");
-        mNumberOfHalls = scanner.nextInt();
+        ScanningLoop scanningLoop = new ScanningLoop(scanner);
 
-        System.out.print("  Введите количество входов: ");
-        mNumberOfEntrances = scanner.nextInt();
+        try{
+            System.out.print("  Введите количество торговых залов: ");
+            mNumberOfHalls = scanningLoop.scanNotNullInt();
+
+            System.out.print("  Введите количество входов: ");
+            mNumberOfEntrances = scanningLoop.scanNotNullInt();
+        }
+        catch (NoSuchElementException e){
+            throw new NoSuchElementException(e.getMessage());
+        }
+        catch (IllegalStateException e){
+            throw new IllegalStateException(e.getMessage());
+        }
     }
 
     @Override

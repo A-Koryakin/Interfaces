@@ -2,7 +2,9 @@ package ru.bstu.ieitus.vt41.kao.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import ru.bstu.ieitus.vt41.kao.utills.ScanningLoop;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 @EqualsAndHashCode(callSuper = true)
@@ -16,15 +18,30 @@ public class Overpass extends Construction {
     }
 
     @Override
-    public void init(Scanner scanner) {
-        System.out.print("  Введите срок эксплуатации: ");
-        mExploitationPeriod = scanner.nextInt();
+    public void init(Scanner scanner) throws NullPointerException, NoSuchElementException, IllegalStateException{
+        if(scanner == null)
+        {
+            throw new NullPointerException("Scanner не был определён");
+        }
 
-        System.out.print("  Введите протяжённость: ");
-        mLength = scanner.nextInt();
+        ScanningLoop scanningLoop = new ScanningLoop(scanner);
 
-        System.out.print("  Введите основной материал: ");
-        mPrimaryMaterial = scanner.next();
+        try {
+            System.out.print("  Введите срок эксплуатации: ");
+            mExploitationPeriod = scanningLoop.scanNotNullInt();
+
+            System.out.print("  Введите протяжённость: ");
+            mLength = scanningLoop.scanNotNullInt();
+
+            System.out.print("  Введите основной материал: ");
+            mPrimaryMaterial = scanner.next();
+        }
+        catch (NoSuchElementException e){
+            throw new NoSuchElementException(e.getMessage());
+        }
+        catch (IllegalStateException e){
+            throw new IllegalStateException(e.getMessage());
+        };
     }
 
     @Override
@@ -40,7 +57,12 @@ public class Overpass extends Construction {
     }
 
     @Override
-    public int compareTo(Construction o) {
-         return this.mExploitationPeriod.compareTo(o.mExploitationPeriod);
+    public int compareTo(Construction o) throws NullPointerException{
+        if (o == null)
+        {
+            throw new NullPointerException("Строение для сравнения не было определено");
+        }
+
+        return this.mExploitationPeriod.compareTo(o.mExploitationPeriod);
     }
 }
